@@ -12,7 +12,7 @@ I wanted to move beyond the Langchain/Streamlit tutorials I've found and move a 
 
 The project includes:  
 - 3 Langchain agent types:
-    - Agent with tools (Tavily search and Wikipedia)
+    - Research agent with tools (Tavily search and Wikipedia)
     - PDF RAG agent
     - SQL agent
 - HTMX Ajax calls
