@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% block content %}
+<section id="banner"><h1>Welcome to Insight AI</h1>
+
+</section><!-- One -->
+
+<section id="four" class="wrapper">
+
+    <header class="align-center"><h2>InsightAI is a Fictional AI Agency</h2>
+        <p>But The AI Assistants Really Work</p>
+        <div class="inner">I built this site to showcase the integration of Generative AI assistants in a web
+            site using Langchain, Flask, and HTMX. <br>This site is quite a distance from production ready.
+            My goal is to move forward from the intro tutorials I've found online and create something
+            useful.
+            <br>
+            For now, I hope you'll find this site interesting and helpful in your GenAI application development
+            journey. <br>
+            Happy Coding!
+        </div>
+    </header>
+    <br>
+
+
+    <div class="inner">
+
+        <div class="flex flex-3">
+            <article>
+                <header><h3>- AI Research Assistant - <br>Curated search empowered by AI
+                </h3>
+                </header>
+
+                <p>This AI Assistant works with search tools and reflects on its response before providing
+                    a final answer.
+                </p>
+                <br>
+                <footer><a href="assistant_chat" class="button special">More</a>
+                </footer>
+            </article>
+            <article>
+                <header><h3>- AI Document Assistant -<br>Unlock the contents of your documents with AI
+                </h3>
+                </header>
+                <p>Upload a PDF and ask this Assistant to find specific information or provide a detailed summary.</p>
+                <footer><a href="/home_rag_chat" class="button special">More</a>
+                </footer>
+            </article>
+            <article>
+                <header><h3>- AI SQL Assistant - <br>Gather insights from a database using natural
+                    language and AI</h3>
+                </header>
+                <p>Zero in on the information you need without "speaking SQL." This Assistant serves as your personal
+                    data analyst.</p>
+                <footer><a href="/sql_chat" class="button special">More</a>
+                </footer>
+            </article>
+        </div>
+    </div>
+</section><!-- Two -->
+<section id="two" class="wrapper style1 special">
+    <div class="inner">
+        <header><h2>Fictional Employees</h2>
+            <p>None of these people work for me.<br>But if they did, I bet they'd be awesome.</p>
+        </header>
+        <div class="flex flex-4">
+            <div class="box person">
+                <div class="image round">
+                    <img src="static/images/pic03.jpg" alt="Person 1" width="168" height="168"></div>
+                <h3>Alex</h3>
+                <p>Creative Coder</p>
+            </div>
+            <div class="box person">
+                <div class="image round">
+                    <img src="static/images/pic04.jpg" alt="Person 2" width="168" height="168"></div>
+                <h3>Alicia</h3>
+                <p>Master Marketer</p>
+            </div>
+            <div class="box person">
+                <div class="image round">
+                    <img src="static/images/pic05.jpg" alt="Person 3" width="168" height="168"></div>
+                <h3>Alan</h3>
+                <p>Super Sales Manager</p>
+            </div>
+            <div class="box person">
+                <div class="image round">
+                    <img src="static/images/pic06.jpg" alt="Person 4" width="168" height="168"></div>
+                <h3>Ava</h3>
+                <p>Fabulous Finance Officer</p>
+            </div>
+        </div>
+    </div>
+</section><!-- Three -->
+<section id="three" class="wrapper special">
+    <div class="inner">
+        <header class="align-center"><h2>Not Sure Why These Photos are Here</h2>
+            <p>They're nice enough I guess.</p>
+        </header>
+        <div class="flex flex-2">
+            <article>
+                <div class="image fit">
+                    <img src="static/images/pic01.jpg" alt="Pic 01" width="576" height="196"></div>
+                <header><h3>Some Mountains Somewhere</h3>
+                </header>
+                <p>Not much traffic.</p>
+
+            </article>
+            <article>
+                <div class="image fit">
+                    <img src="static/images/pic02.jpg" alt="Pic 02" width="576" height="196"></div>
+                <header><h3>A Photo of Someone Taking a Photo</h3>
+                </header>
+                <p>I don't really know what this is all about.</p>
+
+            </article>
+        </div>
+    </div>
+</section><!-- Footer -->
+{% endblock %}
+

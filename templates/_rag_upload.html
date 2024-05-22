@@ -1,0 +1,18 @@
+<div id="chat_form">
+    <div><p style="text-align:right"> <button onclick="closeNav()">X</button></p></div>
+    <div class ="box">
+        <div class="chat-history">
+
+
+
+            <h2>Upload File</h2>
+            <form id='form' hx-encoding='multipart/form-data' hx-post='/upload' hx-target="#chat_form">
+
+               <div><ul class="actions"><li><input type = "file" name = "file" id="file-upload" /></li>
+                   <li><button>Upload</button></li></ul></div>
+                <div> <article class='htmx-indicator'>loading... <i class="fa fa-spinner fa-spin"
+                                                                   style="font-size:22px"></i></article></div>
+            </form>
+        </div>
+    </div>
+</div>

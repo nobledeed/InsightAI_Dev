@@ -1,0 +1,8 @@
+<div class="chat-history">
+    {%for chat in chat_history %}
+    <div class="grid">
+        <article><b>{{chat.type}} </b>{{chat.content}}</article>
+
+    </div>
+    {% endfor %}
+</div>

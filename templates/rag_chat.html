@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main -->
+<section id="main" class="wrapper">
+    <div class="inner">
+        <section id="three" class="wrapper">
+            <div class="inner">
+                <header class="align-center"><h2>Insight AI Document Chat</h2>
+                    <p>Document chunks, embeddings, and vectorstores.  Oh my!</p>
+                </header>
+                <p> This is an example of an AI assistant created to focus its abilities on a single PDF file.</p>
+                <p>Retrieval Augmented Generation-- it's a mouthful, but the notion is pretty
+                    straightforward: read in a document, a PDF in this instance, divide up the content
+                    into pieces (chunks), convert those pieces into something a language model can readily understand
+                    (vectors), focus a conversational AI agent on the vectorstore and viola! -- an AI
+                    assistant able to glean information from your knowledge base. RAG agents have a broad range
+                    of use cases. From effective customer service chat bots to domain specific
+                    research and analysis assistants, RAG agents are a cost effective way to bring the power of
+                    Generative AI to your organization.
+                </p>,
+                <button onclick="openNav()">Open Assistant Chat</button>
+                <p>
+
+                <div class="flex flex-2">
+                    <article>
+                        <div class="image fit">
+                            <img src="static/images/metalball.jpg" alt="Pic 01" width="576" height="196"></div>
+                        <header><h3>Place Holder Upsplash Image</h3>
+                        </header>
+                        <p>One fine day, I'll need this for an important blog link</p>
+                        <footer><a href="#" class="button special">Not a link</a>
+                        </footer>
+                    </article>
+                    <article>
+                        <div class="image fit">
+                            <img src="static/images/spiral.jpg" alt="Pic 02" width="576" height="196"></div>
+                        <header><h3>Another Upsplash Image</h3>
+                        </header>
+                        <p>Whoa. What if I need two blog links someday?</p>
+                        <footer><a href="#" class="button special">No More</a>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<!-- Sidebar -->
+
+<div class="sidebar" id="mySidebar">
+
+    <div class="box">
+        <div id="chat_form">
+            <div>
+                <p style="text-align:right">
+                    <button onclick="closeNav()">X</button>
+                </p>
+            </div>
+            <div>
+                <embed src="/static/rag/{{pdf_file}}" width="400" height="500"
+                       type="application/pdf">
+                <div>
+                    <button hx-post="/delete_rag_files" hx-target
+                            ="#chat_form" class="button alt">Delete
+                    </button>
+                </div>
+            </div>
+            <div class="chat-history"></div>
+
+            <article class="wrapper">
+
+                <form hx-post="/get_rag_response" hx-target=".chat-history" hx-swap="outerHTML"
+                      hx-on::after-request="this.reset()">
+                    <article class='htmx-indicator'>Loading...<i class="fa fa-spinner fa-spin"
+                                                       style="font-size:22px"></i>.
+                    </article>
+                    <p><input type="text" placeholder="How can I help?" name="user_input"></p>
+                    <ul class="actions">
+                        <li>
+                            <button type="submit">Send Message</button>
+                        </li>
+                        <li>
+                            <button hx-post="/end_rag_chat" hx-target="#chat_form"
+                                    class="button alt">Reset
+                            </button>
+                        </li>
+                    </ul>
+
+
+                </form>
+
+            </article>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}

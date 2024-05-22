@@ -1,0 +1,40 @@
+<div id="chat_form">
+    <div>
+        <p style="text-align:right">
+            <button onclick="closeNav()">X</button>
+        </p>
+    </div>
+    <div>
+        <embed src="/static/rag/{{pdf_file}}" width="400" height="500"
+               type="application/pdf">
+        <div>
+            <button hx-post="/delete_rag_files" hx-target
+                    ="#chat_form" class="button alt">Delete
+            </button>
+        </div>
+
+    </div>
+    <div class="chat-history"></div>
+
+    <article>
+
+        <form hx-post="/get_rag_response" hx-target=".chat-history" hx-swap="outerHTML"
+              hx-on::after-request="this.reset()">
+            <article class='htmx-indicator'>loading...</article>
+            <p><input type="text" placeholder="How can I help?" name="user_input"></p>
+            <ul class="actions">
+                <li>
+                    <button type="submit">Send Message</button>
+                </li>
+                <li>
+                    <button hx-post="/end_rag_chat" hx-target="#chat_form"
+                            class="button alt">Reset
+                    </button>
+                </li>
+            </ul>
+
+
+        </form>
+
+    </article>
+</div>

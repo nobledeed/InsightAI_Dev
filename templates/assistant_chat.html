@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main -->
+<section id="main" class="wrapper">
+    <div class="inner">
+        <section id="three" class="wrapper">
+            <div class="inner">
+                <header class="align-center"><h2>Insight AI Research Assistant</h2>
+                    <p>A Conversational ReAct Agent using Tavily and Wikipedia Search Tools </p>
+                </header>
+                <p> Have a conversation with a ReAct (Reason, Action) agent-- an agent designed  to act
+                    as a research assistant.  Created with a specific promt template, this agent will determine
+                    which, if any, search tool will best provide an answer to your question and then iterate over possible results before providing a final
+                    answer.  It can respond to follow-up questions in an extended conversation.</p>
+                <p>Ask about the Gartner Hype Cycle, Learn about Portugal in the 17th Century, or discover unique
+                    things to do on a trip to Split, Croatia. </p>
+                <p>Your conversation history is stored in a SQlite database. You can pick up where you left off
+                    anytime.
+
+                <p> The most fascinating aspect when coding this agent was puzzling out the prompt template. It
+                    blows my mind that writing functions to leverage AI requires a carefully crafted backstory and
+                    a defined role for an AI assistant:
+                <blockquote>
+                    Assistant is designed to be able to assist by providing in-depth explanations and discussions on a
+                    wide range of topics.
+                    As a language model, Assistant is able to generate human-like text based on the input it receives,
+                    allowing it to engage in natural-sounding conversations and provide responses that are coherent and
+                    relevant to the topic at hand.
+                    Assistant is constantly learning and improving, and its capabilities are constantly evolving.
+                    It is able to process and understand large amounts of text, and can use this knowledge to provide
+                    accurate and informative responses to a wide range of questions...
+
+                </blockquote>
+                </p>
+                <button onclick="openNav()">Open Assistant</button>
+                <p>
+
+                <div class="flex flex-2">
+                    <article>
+                        <div class="image fit">
+                            <img src="static/images/metalball.jpg" alt="Pic 01" width="576" height="196"></div>
+                        <header><h3>An AI image from Unsplash</h3>
+                        </header>
+                        <p>An AI brain I guess. I was expecting more nodes.
+                        </p>
+
+                    </article>
+                    <article>
+                        <div class="image fit">
+                            <img src="static/images/spiral.jpg" alt="Pic 02" width="576" height="196"></div>
+                        <header><h3>Another AI Image from Unsplash</h3>
+                        </header>
+                        <p>Hmm. AI makes abstract glass art? I kinda like the red.</p>
+
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<!-- Sidebar -->
+<div class="sidebar" id="mySidebar">
+    <div class="box">
+        <article id="chat_form">
+            <div>
+                <p style="text-align:right">
+                    <button onclick="closeNav()">X</button>
+                </p>
+            </div>
+
+            <div class="chat-history"></div>
+            <article>
+
+                <form hx-post="/get_response" hx-target=".chat-history" hx-on::after-request="this.reset()">
+                    <article class='htmx-indicator'>Loading... <i class="fa fa-spinner fa-spin"
+                                                       style="font-size:22px"></i></article>
+                    <p><input type="text" placeholder="How can I help?" name="user_input"></p>
+
+
+                    <ul class="actions">
+
+                        <li>
+                            <button type="submit">Send Message</button>
+                        </li>
+                        <li>
+                            <button hx-post="/end_chat" hx-target="#chat_form"
+                                    class="button alt">Reset
+                            </button>
+                        </li>
+                    </ul>
+
+
+                </form>
+
+            </article>
+        </article>
+    </div>
+</div>
+{% endblock %}

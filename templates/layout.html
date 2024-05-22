@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+<html>
+<head><title>Insight AI</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+
+        .sidebar {
+          height: 80%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+
+          overflow-x: hidden;
+          overflow-y: scroll;
+          transition: 0.5s;
+          padding-top: 60px;
+          padding-left: 10px;
+          padding-right:10px:
+        }
+
+
+
+        #main {
+          transition: margin-left .5s;
+          padding: 16px;
+        }
+    </style>
+</head>
+<{{body_type|safe}}>
+
+<!-- Header -->
+<header id="header">
+    <div class="inner">
+        <a href="/" class="logo">InsightAI</a>
+        <nav id="nav">
+            {% if page != "home" %}<a href="/">Home</a>{% endif %}
+            {% if page != "assistant" %}<a href="/assistant_chat">Research Assistant</a>{% endif %}
+            {% if page != "rag" %}<a href="/home_rag_chat"> Document Assistant</a>{% endif %}
+            {% if page != "sql" %}<a href="/sql_chat"> SQL Assistant</a>{% endif %}
+            <!-- <a href="/elements">Sample</a> -->
+        </nav>
+        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+    </div>
+</header><!-- Banner -->
+
+{% block content %}
+{% endblock %}
+
+<footer id="footer">
+    <div class="inner">
+        <div class="flex">
+            <ul class="icons">
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+                <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+                <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+    Site made with: <a href="https://templated.co/">TEMPLATED.CO</a>
+</div>
+
+<!-- Scripts -->
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/skel.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+<script>
+    function openNav() {
+ document.getElementById("mySidebar").style.width = "40%";
+ document.getElementById("main").style.marginLeft = "40%";
+}
+
+function closeNav() {
+ document.getElementById("mySidebar").style.width = "0";
+ document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<script src="https://unpkg.com/htmx.org@1.9.11"></script>
+</body>
+</html>

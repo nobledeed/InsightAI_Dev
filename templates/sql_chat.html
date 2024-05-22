@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main -->
+<section id="main" class="wrapper">
+    <div class="inner">
+        <section id="three" class="wrapper">
+            <div class="inner">
+                <header class="align-center"><h2>Insight AI SQL Assistant</h2>
+                    <p>An agent designed to query a database based on natural language questions.
+                    </p>
+                </header>
+                <p><span class="image right"><img src="static/images/online_store_erd.png" width="300px" height ="300px"></span>
+                    Not everyone speaks fluent SQL, the "language" of relational database systems.  Using the right
+                    toolkit, an AI agent can serve as a translator, converting questions posited in natural language
+                    into SQL queries.</p>
+                <p>The entity relationship diagram on the right is a model of a basic  online store-- the sample
+                    database hosted on our server. You can ask the SQL assistant about best selling products, largest customer based on purchase amount, or
+                    check product prices. <p>Find the information you need, no SQL required.</p>
+                <p>This agent surprised me in its ability to understand the schema of a database. The
+                    key to unlocking the power of a relational database is understanding the links between tables.
+                 This SQL Assistant nailed it. </p>
+                <button onclick="openNav()">Open Assistant</button>
+                <p>
+
+                <div class="flex flex-2">
+                    <article>
+                        <div class="image fit">
+                            <img src="static/images/metalball.jpg" alt="Pic 01" width="576" height="196"></div>
+                        <header><h3>An AI Brain From Upsplash</h3>
+                        </header>
+                        <p>Is this what it looks like in data center?</p>
+
+                    </article>
+                    <article>
+                        <div class="image fit">
+                            <img src="static/images/spiral.jpg" alt="Pic 02" width="576" height="196"></div>
+                        <header><h3>AI Art From Upsplash</h3>
+                        </header>
+                        <p>Coming to a gallery near you!
+
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<!-- Sidebar -->
+<div class="sidebar" id="mySidebar">
+    <div class="box">
+        <div id="chat_form">
+            <div>
+                <p style="text-align:right">
+                    <button onclick="closeNav()">X</button>
+                </p>
+            </div>
+
+            <div class="chat-history"></div>
+
+            <article>
+
+                <form hx-post="/get_sql_response" hx-target=".chat-history" hx-swap="outerHTML"
+                      hx-on::after-request="this.reset()">
+                    <article class='htmx-indicator'><i class="fa fa-spinner fa-spin"
+                                                       style="font-size:22px"></i></article>
+                    <p><input type="text" placeholder="How can I help?" name="user_input"></p>
+                    <ul class="actions">
+                        <li>
+                            <button type="submit">Send Message</button>
+                        </li>
+
+                    </ul>
+
+
+                </form>
+
+            </article>
+        </div>
+    </div>
+</div>-
+{% endblock %}

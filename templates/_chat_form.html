@@ -1,0 +1,32 @@
+<div id="chat_form">
+    <div class="inner">
+        <div>
+            <p style="text-align:right">
+                <button onclick="closeNav()">X</button>
+            </p>
+        </div>
+
+        <div class="chat-history"></div>
+        <article>
+
+            <form hx-post="/get_response" hx-target=".chat-history" hx-on::after-request="this.reset()">
+                <article class='htmx-indicator'><i class="fa fa-spinner fa-spin"
+                                                   style="font-size:22px"></i></article>
+                <p><input type="text" placeholder="How can I help?" name="user_input"></p>
+                <ul class="actions">
+                    <li>
+                        <button type="submit">Send Message</button>
+                    </li>
+                    <li>
+                        <button hx-post="/end_chat" hx-target="#chat_form"
+                                class="button alt">Reset
+                        </button>
+                    </li>
+                </ul>
+
+
+            </form>
+
+        </article>
+    </div>
+</div>
