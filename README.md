@@ -1,4 +1,5 @@
-![InsightAI](https://github.com/nobledeed/Insight_AI/assets/8227231/ccd89496-93d6-4a57-a2de-112893c51673)
+
+![InsightAI](https://github.com/nobledeed/InsightAI_Dev/assets/8227231/26a843ee-d9ea-4d49-b4c0-158d870353c7)
 
 
 ## InsightAI
